@@ -34,7 +34,10 @@
 
 ```bash
 git clone https://github.com/pacong12/evoting.git
-cd laravel-9-evoting-pemilihan-ketua-osis
+```
+cd evoting
+
+```bash
 composer install
 cp .env.example .env
 ```
