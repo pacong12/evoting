@@ -1,4 +1,4 @@
-<h1 align="center">Selamat datang di Aplikasi Voting Pemilihan Ketua Osis! 👋</h1>
+<h1 align="center">Selamat datang di Aplikasi Voting  👋</h1>
 <img src="https://user-images.githubusercontent.com/61069138/200459674-928d1bfc-a291-4c06-a343-0b964c04c64b.png" >
 
 
@@ -23,8 +23,8 @@
 
 ## Akun Default
 
-- email: admin@gmail.com
-- Password: admin123
+- email: admin@mail.com
+- Password: Password
 - Login Admin 127.0.0.1:8000/login-admin
 ---
 
@@ -33,7 +33,7 @@
 1. **Clone Repository**
 
 ```bash
-git clone https://github.com/fikrisuheri/-laravel-9-evoting-pemilihan-ketua-osis.git
+git clone https://github.com/pacong12/evoting.git
 cd laravel-9-evoting-pemilihan-ketua-osis
 composer install
 cp .env.example .env
