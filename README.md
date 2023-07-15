@@ -35,13 +35,12 @@
 ```bash
 git clone https://github.com/pacong12/evoting.git
 ```
-cd evoting
 
 ```bash
 composer install
 cp .env.example .env
 ```
-
+Ubah `.env.example` ke `.env`
 2. **Buka `.env` lalu ubah baris berikut sesuai dengan databasemu yang ingin dipakai**
 
 ```bash
@@ -82,15 +81,6 @@ php artisan serve
 
 Contributions, issues and feature requests di persilahkan.
 
-
-## Author
-
-- Facebook : <a href="https://web.facebook.com/ahmad.ari.9847/"> FIKRI SUHERI</a>
-- INSTAGRAM : <a href="https://www.instagram.com/fikrisuheri__"> FIKRI SUHERI</a>
-
-## Donation
-
-You can support Me On [Saweria](https://saweria.co/fikrisuheri) Or [Traktee](https://trakteer.id/fikri-suheri)
 
 ## Request App
 Saya Juga Open Jasa Pembuatan Website Ya, Silahkan Bisa Kontak Saya Via Facebook Saya Di Atas
