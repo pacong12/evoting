@@ -38,11 +38,13 @@ git clone https://github.com/pacong12/evoting.git
 
 ```bash
 composer install
-cp .env.example .env
+
 ```
 Ubah `.env.example` ke `.env`
 
-
+```bash
+cp .env.example .env
+```
 2. **Buka `.env` lalu ubah baris berikut sesuai dengan databasemu yang ingin dipakai**
 
 ```bash
