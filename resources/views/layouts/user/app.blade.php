@@ -7,12 +7,12 @@
     <title>{{ $app_name }}</title>
 
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/main/app.css">
+    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/main/app-dark.css">
 
     <link rel="shortcut icon" href="{{ asset('mazer') }}/assets/images/logo/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('mazer') }}/assets/images/logo/favicon.png" type="image/png">
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/pages/fontawesome.css">
-    <link rel="stylesheet"
-        href="{{ asset('mazer') }}/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="{{ asset('mazer') }}/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/css/pages/datatables.css">
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/extensions/toastify-js/src/toastify.css" />
     <link rel="stylesheet" href="{{ asset('mazer') }}/assets/extensions/sweetalert2/sweetalert2.min.css" />
@@ -65,16 +65,16 @@
         }
     </script>
     @if(session()->has('success'))
-        <script>
-            Toastify({
-                text: "{{ session('success') }}",
-                duration: 3000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                backgroundColor: "#4fbe87",
-            }).showToast()
-        </script>
+    <script>
+        Toastify({
+            text: "{{ session('success') }}",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#4fbe87",
+        }).showToast()
+    </script>
     @endif
     @stack('js')
 </body>

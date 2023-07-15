@@ -46,7 +46,7 @@
                 <li class="sidebar-item  ">
                     <a href="{{ route('backend.config.index') }}" class='sidebar-link'>
                         <i class="bi bi-gear"></i>
-                        <span>Config</span>
+                        <span>Setelan</span>
                     </a>
                 </li>
 

@@ -4,7 +4,7 @@
     <div class="card-header d-flex justify-content-between">
         <h4 class="card-title"> {{ __('button.add') }} {{ __('field.kandidat') }}</h4>
         <div class="card-header-action">
-            <a href="{{ route('backend.kandidat.index') }}}}" class="btn btn-secondary">{{ __('button.back') }}</a>
+            <a href="{{ route('backend.kandidat.index') }}" class="btn btn-secondary">{{ __('button.back') }}</a>
         </div>
     </div>
     <div class="card-body">

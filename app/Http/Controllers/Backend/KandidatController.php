@@ -19,9 +19,9 @@ class KandidatController extends Controller
     {
         try {
             $data['kandidat'] = $this->kandidat->get();
-            return view('backend.kandidat.index',compact('data'));
-        }catch (\Throwable $th) {
-            return view('error.index',['message' => $th->getMessage()]);
+            return view('backend.kandidat.index', compact('data'));
+        } catch (\Throwable $th) {
+            return view('error.index', ['message' => $th->getMessage()]);
         }
     }
 
@@ -29,8 +29,8 @@ class KandidatController extends Controller
     {
         try {
             return view('backend.kandidat.create');
-        }catch (\Throwable $th) {
-            return view('error.index',['message' => $th->getMessage()]);
+        } catch (\Throwable $th) {
+            return view('error.index', ['message' => $th->getMessage()]);
         }
     }
 
@@ -38,10 +38,10 @@ class KandidatController extends Controller
     {
         try {
             $data = $request->except('_token');
-            $this->kandidat->store($data,true,['photo'],'kandidat');
-            return redirect()->route('backend.kandidat.index')->with('success',__('message.store'));
-        }catch (\Throwable $th) {
-            return view('error.index',['message' => $th->getMessage()]);
+            $this->kandidat->store($data, true, ['photo'], 'kandidat');
+            return redirect()->route('backend.kandidat.index')->with('success', __('message.store'));
+        } catch (\Throwable $th) {
+            return view('error.index', ['message' => $th->getMessage()]);
         }
     }
 
@@ -49,30 +49,30 @@ class KandidatController extends Controller
     {
         try {
             $data['kandidat'] = $this->kandidat->find($id);
-            return view('backend.kandidat.edit',compact('data'));
-        }catch (\Throwable $th) {
-            return view('error.index',['message' => $th->getMessage()]);
+            return view('backend.kandidat.edit', compact('data'));
+        } catch (\Throwable $th) {
+            return view('error.index', ['message' => $th->getMessage()]);
         }
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         try {
-              $data = $request->except('_token');
-            $this->kandidat->update($id,$request->all(),true,['photo'],'kandidat');
-            return redirect()->route('backend.kandidat.index')->with('success',__('message.update'));
-        }catch (\Throwable $th) {
-            return view('error.index',['message' => $th->getMessage()]);
+            $data = $request->except('_token');
+            $this->kandidat->update($id, $request->all(), true, ['photo'], 'kandidat');
+            return redirect()->route('backend.kandidat.index')->with('success', __('message.update'));
+        } catch (\Throwable $th) {
+            return view('error.index', ['message' => $th->getMessage()]);
         }
     }
 
     public function delete($id)
     {
         try {
-            $this->jurusan->delete($id,true,['photo']);
-            return redirect()->route('backend.jurusan.index')->with('success',__('message.delete'));
-        }catch (\Throwable $th) {
-            return view('error.index',['message' => $th->getMessage()]);
+            $this->jurusan->delete($id, true, ['photo']);
+            return redirect()->route('backend.jurusan.index')->with('success', __('message.delete'));
+        } catch (\Throwable $th) {
+            return view('error.index', ['message' => $th->getMessage()]);
         }
     }
 }
