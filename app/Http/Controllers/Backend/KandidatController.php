@@ -3,21 +3,26 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Kandidat;
+use App\DataTables\KandidatDatatable;
 use App\Http\Controllers\Controller;
 use App\Repositories\BaseRepository;
 use Illuminate\Http\Request;
 
 class KandidatController extends Controller
 {
+
+
+
     protected $kandidat;
     public function __construct(Kandidat $kandidat)
     {
         $this->kandidat = new BaseRepository($kandidat);
     }
 
-    public function index()
+    public function index(KandidatDatatable $datatable)
     {
         try {
+            return $datatable->render('backend.kandidat.index');
             $data['kandidat'] = $this->kandidat->get();
             return view('backend.kandidat.index', compact('data'));
         } catch (\Throwable $th) {
@@ -69,8 +74,8 @@ class KandidatController extends Controller
     public function delete($id)
     {
         try {
-            $this->jurusan->delete($id, true, ['photo']);
-            return redirect()->route('backend.jurusan.index')->with('success', __('message.delete'));
+            $this->kandidat->delete($id, true);
+            return redirect()->route('backend.kandidat.index')->with('success', __('message.delete'));
         } catch (\Throwable $th) {
             return view('error.index', ['message' => $th->getMessage()]);
         }
