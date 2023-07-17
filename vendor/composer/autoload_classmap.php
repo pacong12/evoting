@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\DataTables\\JurusanDatatable' => $baseDir . '/app/DataTables/JurusanDatatable.php',
+    'App\\DataTables\\KandidatDatatable' => $baseDir . '/app/DataTables/KandidatDatatable.php',
     'App\\DataTables\\KelasDatatable' => $baseDir . '/app/DataTables/KelasDatatable.php',
     'App\\DataTables\\PemilihDatatable' => $baseDir . '/app/DataTables/PemilihDatatable.php',
     'App\\Events\\SendVotingNotification' => $baseDir . '/app/Events/SendVotingNotification.php',
