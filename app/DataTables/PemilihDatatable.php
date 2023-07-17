@@ -16,12 +16,12 @@ class PemilihDatatable extends DataTable
 {
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
-            return (new EloquentDataTable($query))
+        return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
                 $data['action'] = $this->actions($query);
-                return view('datatable.actions', compact('data','query'))->render();
+                return view('datatable.actions', compact('data', 'query'))->render();
             })
-            ->addIndexColumn()     
+            ->addIndexColumn()
             ->rawColumns(['action'])
             ->setRowId('id');
     }
@@ -32,17 +32,22 @@ class PemilihDatatable extends DataTable
             [
                 'title' => 'Hapus',
                 'icon' => 'bi bi-trash',
-                'route' => route('backend.pemilih.delete',$id),
+                'route' => route('backend.pemilih.delete', $id),
                 'type' => 'delete',
+            ],  [
+                'title' => 'Edit',
+                'icon' => 'bi bi-pen',
+                'route' => route('backend.pemilih.edit', $id),
+                'type' => '',
             ],
         ];
     }
 
     public function query(User $model): QueryBuilder
     {
-        return $model->newQuery()->whereHas('roles',function($q){
-            $q->where('name','user');
-        })->OrderBy('id','desc');
+        return $model->newQuery()->whereHas('roles', function ($q) {
+            $q->where('name', 'user');
+        })->OrderBy('id', 'desc');
     }
 
     public function html()

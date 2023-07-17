@@ -5,6 +5,11 @@
         <h4 class="card-title">{{ __('field.voter') }}</h4>
         <div class="card-header-action">
             <a href="{{ route('backend.pemilih.create') }}" class="btn btn-primary">{{ __('button.add') }}</a>
+            <a href="{{ route('user.export') }}">
+                <button class="btn btn-success">
+                    Unduh
+                </button>
+            </a>
         </div>
     </div>
     <div class="card-body">
