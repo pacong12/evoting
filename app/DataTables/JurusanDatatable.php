@@ -16,12 +16,12 @@ class JurusanDatatable extends DataTable
 {
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
-            return (new EloquentDataTable($query))
+        return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
                 $data['action'] = $this->actions($query);
-                return view('datatable.actions', compact('data','query'))->render();
+                return view('datatable.actions', compact('data', 'query'))->render();
             })
-            ->addIndexColumn()     
+            ->addIndexColumn()
             ->rawColumns(['action'])
             ->setRowId('id');
     }
@@ -32,13 +32,13 @@ class JurusanDatatable extends DataTable
             [
                 'title' => 'Hapus',
                 'icon' => 'bi bi-trash',
-                'route' => route('backend.jurusan.delete',$id),
+                'route' => route('backend.jurusan.delete', $id),
                 'type' => 'delete',
             ],
             [
                 'title' => 'Edit',
                 'icon' => 'bi bi-pen',
-                'route' => route('backend.jurusan.edit',$id),
+                'route' => route('backend.jurusan.edit', $id),
                 'type' => '',
             ],
         ];
@@ -46,7 +46,7 @@ class JurusanDatatable extends DataTable
 
     public function query(Jurusan $model): QueryBuilder
     {
-        return $model->newQuery()->OrderBy('id','desc');
+        return $model->newQuery()->OrderBy('id', 'desc');
     }
 
     public function html()
@@ -62,7 +62,7 @@ class JurusanDatatable extends DataTable
     {
         return [
             Column::make('DT_RowIndex')->title('#')->orderable(false)->searchable(false),
-            Column::make('name')->title(__('field.jurusan_name')),
+            Column::make('name_j')->title(__('field.jurusan_name')),
             Column::make('action')->title(__('field.action'))->orderable(false),
         ];
     }
