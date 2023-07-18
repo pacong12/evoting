@@ -97,4 +97,5 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/voting/{id}', [VotingController::class, 'store'])->name('voting.store');
 });
 Route::get('user-export', [PemilihController::class, 'export'])->name('user.export');
+Route::get('user-import', [PemilihController::class, 'import'])->name('user.import');
 require __DIR__ . '/auth.php';

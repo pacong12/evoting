@@ -10,7 +10,7 @@ use App\Repositories\BaseRepository;
 use App\Services\PemilihService;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\MahasiswaImport;
+use App\Imports\UserImport;
 use App\Exports\Userexport;
 
 class PemilihController extends Controller
@@ -84,7 +84,7 @@ class PemilihController extends Controller
     //import
     public function import()
     {
-        Excel::import(new MahasiswaImport, request()->file('file'));
+        Excel::import(new UserImport, request()->file('file'));
 
         return back();
     }
